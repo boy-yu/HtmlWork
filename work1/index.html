@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+
+<body>
+    <form action="#">
+        <table border="1px" border-collapse=1px>
+            <thead>
+                <tr>
+                    <th colspan="2">欢迎使用注册</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>账号:</span></td>
+                    <td>
+                        <input type="text" name="username" placeholder="请输入账号···" class="inpt">
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码:</td>
+                    <td>
+                        <input type="password" name="userpassword" placeholder="请确认密码···" class="inpt">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="radio" value="nan" name="sex" checked>男
+                        <input type="radio" value="女" name="sex">女
+                        <input type="radio" value="未知" name="sex">保密
+                    </td>
+                </tr>
+                <tr>
+                    <td>简介:</td>
+                    <td>
+                        <textarea name="jianjie" id="" cols="30" rows="10" placeholder="请介绍一下自己吧！"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>爱好：</td>
+                    <td>
+                        <ul>
+                            <li><input class="" value="Travel" type="checkbox">旅游</input></li>
+                            <li><input class="" value="Mountaineering" type="checkbox">登山</input></li>
+                            <li><input class="" value="Bodybuilding" type="checkbox">健身</input></li>
+                            <li><input class="" value="Internet" type="checkbox">上网</input></li>
+                            <li><input class="" value="Swimming" type="checkbox">游泳</input></li>
+                        </ul>
+                    </td>
+                </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="注册">
+
+                        <input type="button" value="去登录">
+                    </td>
+                </tr>
+            </tfoot>
+            </tbody>
+        </table>
+    </form>
+</body>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    .inpt {
+        border: none;
+        width: 255px;
+        height: 25px;
+    }
+
+    textarea {
+        border: none;
+        height: 100px;
+    }
+
+    ul {
+        margin: 0px -40px;
+    }
+
+    ul li {
+        list-style: none;
+        text-align: left;
+    }
+</style>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        .clock_con {
+            position: absolute;
+            height: 25px;
+            width: 175px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="clock" class="clock_con" id="date_info" value="当前时间" οnclick="geturrentDate();"></div>
+</body>
+</html>
+<script>
+    function findTime() {
+        var now = new Date();
+        var day = now.getDay(); //得到周几
+        var week;
+        var week_arr = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+        week = week_arr[day];
+        var time = "";
+        time = " " + week;
+        document.write(time);
+
+        //获取计算机本地时间
+        function UpTime() {
+            dLocal = new Date();
+            nYear = dLocal.getFullYear();
+            nMonth = dLocal.getMonth() + 1;
+            nDate = dLocal.getDate();
+            nHours = dLocal.getHours();
+            nMinutes = dLocal.getMinutes();
+            nSeconds = dLocal.getSeconds();
+        }
+
+        function TypeConversion(num) {
+            var sResult = '';
+            if (num < 10) {
+                sResult = '0' + num;
+            } else {
+                sResult = '' + num;
+            }
+            //返回格式化后的字符串
+            return sResult;
+        }
+
+        function timeFormat() {
+            return nYear + '-' + TypeConversion(nMonth) + '-' + TypeConversion(nDate) + ' ' + TypeConversion(nHours) + ':' +
+                TypeConversion(nMinutes) + ':' + TypeConversion(nSeconds);
+        }
+
+        var eClock = document.getElementById('clock');
+        UpTime();
+        eClock.innerHTML = timeFormat();
+
+        setInterval(function () {
+            //每秒更新时间
+            UpTime();
+            eClock.innerHTML = timeFormat();
+        }, 1000);
+    }
+    findTime();
+</script>
